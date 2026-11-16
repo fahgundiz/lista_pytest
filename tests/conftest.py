@@ -3,6 +3,8 @@ from models.ex_cliente import Cliente
 from models.ex_aluno_curso import Aluno, Curso
 from models.ex_usuario_sistema import Usuario, Sistema
 from models.ex_estoque import Estoque
+from models.ex_produto import Produto, Venda
+
 
 @pytest.fixture
 def cliente():
@@ -27,3 +29,11 @@ def sistema(usuario):
 @pytest.fixture(scope= "module")
 def estoque():
     return Estoque("Mouse", 10)
+
+@pytest.fixture
+def produto():
+    return Produto("Monitor", 900.00)
+
+@pytest.fixture
+def venda(produto):
+    return Venda(produto, 2)
