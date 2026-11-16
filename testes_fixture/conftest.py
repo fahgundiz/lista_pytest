@@ -13,3 +13,13 @@
 # validar os resultados e execute os testes pelo terminal utilizando o comando 
 # pytest -v. 
 
+import pytest
+from exercicios_fixture.ex_usuario import Usuario, Sistema
+
+@pytest.fixture
+def cria_usuario():
+    return Usuario("Gabriel", "gabriel@gmail.com")
+
+@pytest.fixture
+def cria_sistema(cria_usuario):
+    return Sistema(cria_usuario)

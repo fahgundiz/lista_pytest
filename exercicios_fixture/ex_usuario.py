@@ -19,6 +19,10 @@ class Usuario:
         self.nome = nome
         self.email = email
 
+
+class Sistema:
+    def __init__(self, usuario):
+        self.usuario = usuario
+
     def obter_nome_usuario(self):
-        return self.nome
-    
+            return self.usuario.nome
